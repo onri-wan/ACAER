@@ -1,0 +1,23 @@
+extends layout
+
+block signup
+
+    if locals.messages.errors
+        each element in messages.errors
+            div(class='alert alert-danger') !{element.msg}
+    
+    
+    form(action="/signup", method="POST") 
+        label(for="userName") User Name:
+        input(type="text", name="userName")
+
+        label(for="email") Email Address:
+        input(type="email", name="email")
+
+        label(for="password") Password:
+        input(type="password", name="password")
+
+        label(for="confirmPassword") Confirm Password:
+        input(type="password", name="confirmPassword")
+
+        button(type="submit") Submit

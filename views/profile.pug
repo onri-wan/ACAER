@@ -1,0 +1,28 @@
+extends layout
+
+block profile
+
+    p User Name: !{user.userName}
+    p Email: !{user.email}
+    a(href='/logout') Logout
+
+    h2 Add a post
+    form(action='/post/createPost', enctype='multipart/form-data', method="POST") 
+        label(for='title') Title
+        input(type='text', name='title')
+
+        label(for='caption') Caption
+        textarea(type='text', name='caption')
+
+        label(for='imgUpload') Image
+        input(type='file', name='file')
+        
+        button(type="submit") Submit
+
+    ul
+        each element in posts
+            li
+                a(href=`/post/${element._id}`)
+                    img(src=`${element.image}`)
+    
+    a(href='/feed') Return to Feed

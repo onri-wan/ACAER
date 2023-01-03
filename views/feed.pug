@@ -1,0 +1,9 @@
+extends layout 
+
+block feed
+
+    ul
+        each element in posts
+            li
+                a(href=`/post/${element._id}`)
+                    img(src=`${element.image}`)

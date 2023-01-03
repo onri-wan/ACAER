@@ -1,0 +1,16 @@
+extends layout
+
+block login
+
+    if locals.messages.errors
+        each element in messages.errors
+            div(class='alert alert-danger') !{element.msg}
+
+    form(action="/login", method="POST") 
+        label(for="email") Email Address:
+        input(type="email", name="email")
+
+        label(for="password") Password:
+        input(type="password", name="password")
+        
+        button(type="submit") Submit
