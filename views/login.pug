@@ -2,15 +2,20 @@ extends layout
 
 block login
 
-    if locals.messages.errors
-        each element in messages.errors
-            div(class='alert alert-danger') !{element.msg}
+    main(class='form-signin w-100 m-auto text-center mt-5')
+        if locals.messages.errors
+            each element in messages.errors
+                div(class='alert alert-danger') !{element.msg}
 
-    form(action="/login", method="POST") 
-        label(for="email") Email Address:
-        input(type="email", name="email")
+        form(action="/login", method="POST") 
+            h2(class='h3 mb-3 fw-normal') Login
 
-        label(for="password") Password:
-        input(type="password", name="password")
-        
-        button(type="submit") Submit
+            .form-floating
+                input(type="email", name="email", class='form-control', placeholder='name@example.com')
+                label(for="email") Email Address
+
+            .form-floating
+                input(type="password", name="password", class='form-control', placeholder='Password')
+                label(for="password") Password
+            
+            button(type="submit", class='w-100 btn btn-lg btn-primary mt-3') Submit

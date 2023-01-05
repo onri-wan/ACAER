@@ -4,7 +4,7 @@ const User = require('../models/User')
 
 exports.getLogin = (req, res) => {
     if (req.user) { return res.redirect('/profile') }
-    res.render('login')
+    res.render('login', {title: ' | Login'})
 }
 
 exports.postLogin = (req, res, next) => {
@@ -43,7 +43,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
     if (req.user) { return res.redirect('/profile') }
-    res.render('signup')
+    res.render('signup', {title: ' | Signup'})
 }
 
 exports.postSignup = (req, res, next) => {

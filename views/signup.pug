@@ -2,22 +2,25 @@ extends layout
 
 block signup
 
-    if locals.messages.errors
-        each element in messages.errors
-            div(class='alert alert-danger') !{element.msg}
+    main(class='form-signin w-100 m-auto text-center mt-5')
+        if locals.messages.errors
+            each element in messages.errors
+                div(class='alert alert-danger') !{element.msg}
     
-    
-    form(action="/signup", method="POST") 
-        label(for="userName") User Name:
-        input(type="text", name="userName")
+        form(action="/signup", method="POST") 
+            h2(class='h3 mb-3 fw-normal') Signup
 
-        label(for="email") Email Address:
-        input(type="email", name="email")
+            .form-floating
+                input(type="text", name="userName", class='form-control', placeholder='Username')
+                label(for="userName") Username
+            .form-floating
+                input(type="email", name="email", class='form-control', placeholder='name@example.com')
+                label(for="email") Email Address
+            .form-floating
+                input(type="password", name="password", class='form-control', placeholder='Password')
+                label(for="password") Password
+            .form-floating
+                input(type="password", name="confirmPassword", class='form-control', placeholder='Confirm Password')
+                label(for="confirmPassword") Confirm Password
 
-        label(for="password") Password:
-        input(type="password", name="password")
-
-        label(for="confirmPassword") Confirm Password:
-        input(type="password", name="confirmPassword")
-
-        button(type="submit") Submit
+            button(type="submit", class='w-100 btn btn-lg btn-primary mt-3') Submit
