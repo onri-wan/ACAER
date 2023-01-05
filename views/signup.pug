@@ -2,7 +2,7 @@ extends layout
 
 block signup
 
-    main(class='form-signin w-100 m-auto text-center mt-5')
+    main(class='form-signup w-100 m-auto text-center mt-5')
         if locals.messages.errors
             each element in messages.errors
                 div(class='alert alert-danger') !{element.msg}

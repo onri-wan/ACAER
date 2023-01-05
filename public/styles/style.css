@@ -1,12 +1,62 @@
+/* app name */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+/* body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    background-color: #f5f5f5;
+}
 
 .app-name {
     font-family: 'Comfortaa', cursive;
     text-align: center;
     padding-top: 20px;
-    color: #B73E3E;
 }
 
-.form-signin {
+.app-name a {
+    color: #B73E3E;
+    text-decoration: none;
+}
+
+.form-signup .form-floating:focus-within, .form-login .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signup, .form-login {
+    width: 100%;
     max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+/* LOGIN page make form corners sharp*/
+.form-login input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;   
+}
+
+.form-login input[type='password'] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* SIGNUP page make form corners sharp*/
+.form-signup input[type="text"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; 
+}
+
+.form-signup input[type="email"], .form-signup input[name="password"] {
+    border-radius: 0;
+    border-radius: 0; 
+}
+
+.form-signup input[name="confirmPassword"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.get-started {
+    font-family: 'Montserrat', sans-serif;
 }
