@@ -18,7 +18,7 @@ require('./config/passport')(passport) // passport config
 connectDB()
 
 app.set('view engine', 'pug') // tell express we're using pug as template engine
-app.use(express.static('public')) // tell express to make 'public' folder accessible to the public by using built-in middleware
+app.use(express.static(__dirname + '/public')) // tell express to make 'public' folder accessible to the public by using built-in middleware
 app.use(express.urlencoded({ extended:true })) // get data from forms
 app.use(express.json()) // teach server to read JSON
 app.use(logger('dev')) // tell to use morgan as logger

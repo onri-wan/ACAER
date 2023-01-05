@@ -1,10 +1,11 @@
-extends layout
+extends nav
 
 block profile
 
-    p User Name: !{user.userName}
-    p Email: !{user.email}
-    a(href='/logout') Logout
+    div(class='text-center mt-5')
+        p User Name: !{user.userName}
+        p Email: !{user.email}
+        a(href='/logout') Logout
 
     h2 Add a post
     form(action='/post/createPost', enctype='multipart/form-data', method="POST") 
