@@ -2,8 +2,26 @@ extends nav
 
 block feed
 
-    ul
+    div(class='form-login')
+        
+        form(action='/post/createPost', enctype='multipart/form-data', method="POST") 
+            h2(class='text-center') Add a post
+            div(class='form-floating mb-2')  
+                input(type='text', name='title' class='form-control' placeholder="Place Title here" required)
+                label(for='title') Title
+                
+            div(class='form-floating mb-2')
+                textarea(type='text', name='caption' class='form-control' placeholder="Leave a comment here" required)
+                label(for='caption') Caption
+                
+            div(class='form-floating mb-2')
+                input(type='file', name='file' class='form-control' required) 
+                label(for='imgUpload') Image
+
+            button(type="submit" class='w-100 btn btn-lg btn-primary') Submit
+
+    ul(class='text-center px-0')
         each element in posts
-            li
+            li(class='feed-post my-3')
                 a(href=`/post/${element._id}`)
-                    img(src=`${element.image}`)
+                    img(src=`${element.image}` class='rounded')
