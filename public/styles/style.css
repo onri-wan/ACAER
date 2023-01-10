@@ -61,12 +61,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* FEED */
-.feed-post {
+/* FEED and PROFILE */
+.feed-post, .profile-post {
     list-style-type: none;
 }
 
-.feed-post img {
+.feed-post img, .profile-post img {
     max-width: 500px;
     max-height: 300px;
     object-fit: cover;
@@ -105,18 +105,14 @@ body {
     pointer-events: none;
 }
 
-.post-container input:focus ~ label {
-    outline: -webkit-focus-ring-color auto 5px;
-}
-
-.post-container input:checked + p {
+.post-container input[type="checkbox"]:checked + p {
     -webkit-line-clamp: unset;
 }
 
-/* .post-container input:checked ~ label,
-p:not(.truncated) ~ label {
-    display: none;
-} */
+.post-container .caption:not(.truncated) ~ label {
+    /*prevents showing button if text is too small*/
+    display: none; 
+}
 
 .post-container .caption {
     display: -webkit-box;

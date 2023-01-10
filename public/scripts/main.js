@@ -5,11 +5,15 @@ const captionButton = document.getElementById('read-more-less')
 // then the caption is truncated
 const showReadMore = () => {
     captionButton.innerHTML = 'Read More'
+    captionButton.classList.add('show-read-less')
     return 'add'
 }
 
 const showReadLess = () => {
     captionButton.innerHTML = 'Read Less'
+    if (captionButton.classList.contains('show-read-less')) {
+        captionButton.style.display = 'block'
+    }
     return 'remove'
 }
 
@@ -24,6 +28,3 @@ const observer = new ResizeObserver(entries => {
 for (const element of caption) {
     observer.observe(element)
 }
-
-
-

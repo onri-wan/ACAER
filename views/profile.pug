@@ -7,10 +7,10 @@ block profile
         p Email: !{user.email}
         a(href='/logout') Logout
 
-    ul
+    ul(class='text-center px-0')
         each element in posts
-            li
+            li(class='profile-post my-3')
                 a(href=`/post/${element._id}`)
-                    img(src=`${element.image}`)
+                    img(src=`${element.image}` class='rounded')
     
     a(href='/feed') Return to Feed
