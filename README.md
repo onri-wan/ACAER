@@ -1,5 +1,5 @@
 # ACAER
-Login and 
+Login and create new posts. Like a post by clicking the Like button. If the user owns a post, it can be deleted by clicking the Trash button. See created posts by heading to the Profile page.
 
 ## Tech Used
 HTML, CSS, JavaScript, Pug, Bootstrap, Node, MongoDB, Git, MVC architecture
@@ -21,4 +21,6 @@ Create a `.env` file in config folder and add the following as `key = value`.
 `npm start`
 
 ## Screenshots
-![My Image](screenshots/)
+![My Image](screenshots/home.png)
+![My Image](screenshots/post.png)
+![My Image](screenshots/profile.png)
